@@ -3,6 +3,9 @@
 ### **Problem** 
 - Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's, and return the matrix.
 - You must do it in place.
+- Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]  ------>    Output: [[1,0,1],[0,0,0],[1,0,1]]
+- Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]].  ------>   Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+    
     
 ### **Solution**
 - We can use first element of each row/column as flag indicator for that row/column. It means if we make first element as 0 whole row/column will be set to zero.
