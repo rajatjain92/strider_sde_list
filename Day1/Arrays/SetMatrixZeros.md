@@ -13,7 +13,7 @@
 - Handle first cloumn separately.
 - Main thing to handle is that element zero act as flag for row as well as column that why we need to have col0.
 
-```
+``` cpp
     
 class Solution {
 public:
