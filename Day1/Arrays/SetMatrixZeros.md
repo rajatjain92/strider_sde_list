@@ -40,7 +40,7 @@ public:
             }
         }
         
-        // for 2 iteration start from last because first row and column is used as flag, update it at last
+        // for 2 iteration start from last because first row and column is used as flag, update them at last
         for(int i=R-1;i>=0;i--){
             // update till second column
             for(int j=C-1;j>0;j--){
