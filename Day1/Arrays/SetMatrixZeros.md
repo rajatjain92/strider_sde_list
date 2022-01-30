@@ -11,21 +11,28 @@
 - In first iteration set all flags to zero with logic described in point 2.
 - In second iteration set zeros. As first element is used as flags, start second iteration from last m-1,n-1 position.
 - Handle first cloumn separately.
+- Main thing to handle is that element zero act as flag for row as well as column that why we need to have col0.
 
 ```
     
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
+        
+        // flag for column 0
         int col0 = 1;
         int R = matrix.size();
         int C = matrix[0].size();
         
+        // use first element of each row and column as flag
         for(int i=0;i<R;i++){
+            // update flag for column 0
             if(matrix[i][0] == 0){
                 col0 = 0;
             }
+            // for column start with j=1
             for(int j=1;j<C;j++){
+                // if i,j element is zero menas that row and column should be zero , so set i,0 and j,0 to 0.
                 if(matrix[i][j] == 0){
                     matrix[i][0] = 0;
                     matrix[0][j] = 0;
@@ -33,12 +40,15 @@ public:
             }
         }
         
+        // for 2 iteration start from last because first row and column is used as flag, update it at last
         for(int i=R-1;i>=0;i--){
+            // update till second column
             for(int j=C-1;j>0;j--){
                 if(matrix[i][0] == 0 || matrix[0][j] == 0){
                     matrix[i][j] = 0;    
                 } 
             }
+            // update first column explicitly
             if(col0 == 0){
                 matrix[i][0] = 0;        
             }
